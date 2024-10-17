@@ -14,7 +14,7 @@ class Product(models.Model):
     product_description = models.TextField()
     product_price = models.FloatField()
     product_count = models.IntegerField()
-    product_photo = models.ImageField()
+    product_photo = models.ImageField(upload_to='media')
     product_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):

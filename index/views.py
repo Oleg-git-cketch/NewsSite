@@ -13,9 +13,18 @@ def home_page(request):
     return render(request, 'home.html', context)
 
 
-def product_page(request):
-    return render(request, 'product.html')
+def product_page(request, pk):
+    # Достаем данные из БД
+    product = Product.objects.get(id=pk)
+    # Отправляем данные на фронт
+    context = {'product': product}
+    return render(request, 'product.html', context)
 
 
-def category_page(request):
-    return render(request, 'category.html')
+def category_page(request, pk):
+    # Определяем выбранную категорию
+    category = Category.objects.get(id=pk)
+    exact_products = Product.objects.filter(product_category=category)
+    # Отправляем данные на фронт
+    context = {'category': category, 'products': exact_products}
+    return render(request, 'category.html', context)
