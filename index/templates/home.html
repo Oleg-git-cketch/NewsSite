@@ -35,7 +35,7 @@
         {% for p in products %}
       <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-
+            <img src="{{ p.product_photo.url }}" width="200" height="200" alt="{{ p }}">
         </div>
         <h3 class="fs-2 text-white">{{ p.product_name }}</h3>
         <p class="text-white">{{ p.product_description }}</p>
