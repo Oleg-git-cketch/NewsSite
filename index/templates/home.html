@@ -26,7 +26,11 @@
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         <span class="fs-4 text-white">Чпок-пупок | Магазин девайсов</span>
       </a>
-
+        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" action="/search" method="post">
+            {% csrf_token %}
+            <p class="text-white">Поиск по товару:</p> {{ form }}
+            <button type="submit" class="btn btn-success">Поиск</button>
+        </form>
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Главная</a></li>
       </ul>
