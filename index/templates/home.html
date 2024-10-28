@@ -24,18 +24,17 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4 text-white">Чпок-пупок | Магазин девайсов</span>
+        <span class="fs-4 text-white">Breaking News | Срочные Новости</span>
       </a>
         <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" action="/search" method="post">
             {% csrf_token %}
-            <p class="text-white">Поиск по товару:</p> {{ form }}
+            <p class="text-white">Поиск:</p> {{ form }}
             <button type="submit" class="btn btn-success">Поиск</button>
         </form>
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Главная</a></li>
           {% if user.is_authenticated %}
           <li class="nav-item"><a href="/logout" class="nav-link">Выйти</a></li>
-          <li class="nav-item"><a href="/" class="nav-link">Корзина</a></li>
           {% else %}
           <li class="nav-item"><a href="/register" class="nav-link">Регистрация</a></li>
           <li class="nav-item"><a href="/accounts/login" class="nav-link">Войти</a></li>
@@ -46,11 +45,10 @@
         {% for p in products %}
       <div class="feature col">
         <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-            <img src="{{ p.product_photo.url }}" width="200" height="200" alt="{{ p }}">
+            <img src="{{ p.new_photo.url }}" width="200" height="200" alt="{{ p }}">
         </div>
-        <h3 class="fs-2 text-white">{{ p.product_name }}</h3>
-        <p class="text-white">{{ p.product_description }}</p>
-        <a href="/product/{{ p.id }}" class="icon-link">
+        <h3 class="fs-2 text-white">{{ p.new_name }}</h3>
+        <a href="/new/{{ p.id }}" class="icon-link">
           Подробнее
         </a>
       </div>

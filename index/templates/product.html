@@ -10,29 +10,25 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4 text-white">Чпок-пупок | Магазин девайсов</span>
+        <span class="fs-4 text-white">Breaking News | Срочные Новости</span>
       </a>
 
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Главная</a></li>
       </ul>
     </header>
-    <h1 class="text-white">{{ product.product_name }}</h1>
-    <img src="{{ product.product_photo.url }}" width="350" height="350" alt="{{ product.product_name }}">
+    <h1 class="text-white">{{ product.new_name }}</h1>
+    <img src="{{ product.new_photo.url }}" width="350" height="350" alt="{{ product.new_name }}">
     <br>
-    <p class="text-white">Описание: {{ product.product_description }}</p>
+    <p class="text-white">Описание: {{ product.new_description }}</p>
     <br>
-    <p class="text-white">Количество на складе: {{product.product_count}}</p>
     <br>
     <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/category/{{ product.product_category.id }}"
-                                class="nav-link active" aria-current="page">{{product.product_category}}
+        <li class="nav-item"><a href="/category/{{ product.new_category.id }}"
+                                class="nav-link active" aria-current="page">{{product.new_category}}
         </a>
         </li>
     </ul>
-    <br>
-    <button class="btn btn-warning text-white">В корзину</button>
-    <button class="btn btn-secondary text-white">${{product.product_price}}</button>
 </div>
 </body>
 </html>

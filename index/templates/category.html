@@ -10,7 +10,7 @@
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-        <span class="fs-4 text-white">Чпок-пупок | Магазин девайсов</span>
+        <span class="fs-4 text-white">Breaking News | Срочные Новости</span>
       </a>
 
       <ul class="nav nav-pills">
@@ -19,8 +19,8 @@
     </header>
     <h1 class="text-white">{{category}}</h1>
     {% for p in products %}
-    <img src="{{ p.product_photo.url }}" width="350" height="350" alt="{{ p.product_name }}">
-    <h2 class="text-white">{{ p.product_name }}</h2>
+    <img src="{{ p.new_photo.url }}" width="350" height="350" alt="{{ p.new_name }}">
+    <h2 class="text-white">{{ p.new_name }}</h2>
     <a href="/product/{{ p.id }}">Подробнее</a>
     <br>
     {% endfor %}
